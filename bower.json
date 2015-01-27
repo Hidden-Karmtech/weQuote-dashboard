@@ -18,7 +18,7 @@
     "assets/lib"
   ],
   "dependencies": {
-    "keen-js": "https://github.com/c-lillini/keen-js.git",
+    "keen-js": "~3.2.1",
     "jquery": "~2.1.1",
     "bootstrap": "~3.2.0",
     "holderjs": "~2.3.2"

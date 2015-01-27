@@ -1,189 +1,180 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>weQuote Dashboard</title>
-  <!-- bower:css -->
-  <link rel="stylesheet" href="assets/lib/bootstrap/dist/css/bootstrap.css" />
-  <!-- endbower -->
-  <!-- bower:js -->
-  <script src="assets/lib/jquery/dist/jquery.js"></script>
-  <script src="assets/lib/keen-js/dist/keen.min.js"></script>
-  <script src="assets/lib/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="assets/lib/holderjs/holder.js"></script>
-  <!-- endbower -->
-</head>
-<body class="application">
+    <head>
+        <title>weQuote Dashboard</title>
+        <!-- bower:css -->
+        <link rel="stylesheet" href="assets/lib/bootstrap/dist/css/bootstrap.css" />
+        <!-- endbower -->
+        <link rel="stylesheet" href="assets/css/keen-dashboards.css">
+        <link href="assets/css/keen-static.css" rel="stylesheet" type="text/css"/>
+        <!-- bower:js -->
+        <script src="assets/lib/jquery/dist/jquery.js"></script>
+        <script src="assets/lib/keen-js/dist/keen.min.js"></script>
+        <script src="assets/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="assets/lib/holderjs/holder.js"></script>
+        <!-- endbower -->
+        <script src="lib/query.js" type="text/javascript"></script>
+        <script>
+            Holder.add_theme("social");
+        </script>
+    </head>
+    <body class="application">
 
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="./">weQuote Dashboard</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-left">
-          <li><a href="https://keen.io">Home</a></li>
-          <li><a href="https://keen.io/team">Team</a></li>
-          <li><a href="https://github.com/keenlabs/dashboards/tree/gh-pages/layouts/hero-thirds">Source</a></li>
-          <li><a href="https://groups.google.com/forum/#!forum/keen-io-devs">Community</a></li><li><a href="http://stackoverflow.com/questions/tagged/keen-io?sort=newest&pageSize=15">Technical Support</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid">
-
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="chart-wrapper" id="searchText">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <div id="grid-1-1">
-              <img data-src="holder.js/100%x240/white/text:#grid-1-1">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="./">weQuote Dashboard</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="https://keen.io">Home</a></li>
+                        <li><a href="https://keen.io/team">Team</a></li>
+                        <li><a href="https://github.com/keenlabs/dashboards/tree/gh-pages/layouts/hero-thirds">Source</a></li>
+                        <li><a href="https://groups.google.com/forum/#!forum/keen-io-devs">Community</a></li><li><a href="http://stackoverflow.com/questions/tagged/keen-io?sort=newest&pageSize=15">Technical Support</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
         </div>
-      </div>
-        <div class="col-sm-4">
-        <div class="chart-wrapper" id="searchAuthor">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <div id="grid-1-1">
-              <img data-src="holder.js/100%x240/white/text:#grid-1-1">
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Testo ricercato
+                        </div>
+                        <div class="chart-stage" id="searchText">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper" >
+                        <div class="chart-title">
+                            Autori ricercati
+                        </div>
+                        <div class="chart-stage" id="searchAuthor">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Tag ricercati
+                        </div>
+                        <div class="chart-stage" id="searchTag">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
+
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Classifica testo ricercato
+                        </div>
+                        <div class="chart-stage" id="searchTextTable">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Classifica autori
+                        </div>
+                        <div class="chart-stage" id="searchAuthorTable">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Classifica Tag
+                        </div>
+                        <div class="chart-stage"  id="searchTagTable">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Totale Condivisioni
+                        </div>
+                        <div class="chart-stage" id="shareCount">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Totale Condivisioni Settimana
+                        </div>
+                        <div class="chart-stage" id="shareCount-week">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Condivisioni del giorno
+                        </div>
+                        <div class="chart-stage" id="shareCount-day">
+
+                        </div>
+                        <div class="chart-notes">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="chart-wrapper" id="searchTag">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <img data-src="holder.js/100%x240/white">
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
+        <div>
+            <hr>
+
+            <p class="small text-muted">Built with &#9829; by <a href="https://keen.io">Keen IO</a></p>
+
         </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <div class="chart-wrapper" id="searchTextTable">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <img data-src="holder.js/100%x120/white">
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="chart-wrapper" id="searchAuthorTable">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <img data-src="holder.js/100%x120/white">
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="chart-wrapper"  id="searchTagTable">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <img data-src="holder.js/100%x120/white">
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
-        </div>
-      </div>
-<!-- end of three -->
-      <div class="col-sm-6 col-md-4">
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <img data-src="holder.js/100%x120/white">
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="chart-wrapper" id="shareCount">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <img data-src="holder.js/100%x120/white">
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4" id="searchCount">
-        <div class="chart-wrapper">
-          <div class="chart-title">
-            Cell Title
-          </div>
-          <div class="chart-stage">
-            <img data-src="holder.js/100%x120/white">
-          </div>
-          <div class="chart-notes">
-            Notes about this chart
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-    <hr>
-
-    <p class="small text-muted">Built with &#9829; by <a href="https://keen.io">Keen IO</a></p>
-
-  </div>
-
-  <script src="../../assets/lib/jquery/dist/jquery.min.js"></script>
-  <script src="../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  <script src="../../assets/lib/holderjs/holder.js"></script>
-  <script>
-    Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
-  </script>
-
-  <script src="../../assets/lib/keen-js/dist/keen.min.js"></script>
-  <script src="../../assets/js/meta.js"></script>
-
-</body>
+    </body>
 </html>

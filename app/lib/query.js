@@ -14,6 +14,28 @@ Keen.ready(function () {
 });
 Keen.ready(function () {
     var query = new Keen.Query("count", {
+        eventCollection: "share",
+        timeframe: "this_7_days"
+    });
+    client.draw(query, document.getElementById("shareCount-week"), {
+        chartType: "metric",
+        title: "Share Count",
+        colors: ["#fe6672"]
+    });
+});
+Keen.ready(function () {
+    var query = new Keen.Query("count", {
+        eventCollection: "share",
+        timeframe: "this_day"
+    });
+    client.draw(query, document.getElementById("shareCount-day"), {
+        chartType: "metric",
+        title: "Share Count",
+        colors: ["#8a8ad6"]
+    });
+});
+Keen.ready(function () {
+    var query = new Keen.Query("count", {
         eventCollection: "search"
     });
     client.draw(query, document.getElementById("searchCount"), {
